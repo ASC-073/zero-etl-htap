@@ -1,6 +1,13 @@
 services:
   htap-postgres:
     build: .
+    # Changing conf for postgres to add wal2json as an output_plugin_libraries entity.
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+      - "-c"
+      - "output_plugin_libraries=pgoutput,test_decoding,wal2json"
     container_name: htap_postgres
     ports:
       - "5432:5432"

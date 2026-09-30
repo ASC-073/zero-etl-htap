@@ -1,0 +1,5 @@
+pg_data/
+shared_data/
+htap_cdc/target/
+postgres/
+.git/
