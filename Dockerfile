@@ -27,7 +27,7 @@ RUN make USE_PGXS=1 && make install USE_PGXS=1
 FROM postgres:17
 
 # DuckDB requires the C++ standard lib to run
-RUN apt-get update && apt-get install -y libstdc++6 && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y libstdc++6 postgresql-17-wal2json && rm -rf /var/lib/apt/lists/*
 
 # Copy the compiled extension and SQL control files from bulder stage
 COPY --from=builder /usr/lib/postgresql/17/lib/duckdb_fdw.so /usr/lib/postgresql/17/lib

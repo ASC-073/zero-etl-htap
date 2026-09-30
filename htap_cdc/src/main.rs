@@ -20,7 +20,7 @@ async fn main() -> Result<(), Error> {
     loop {
         // Query logical decoding slot for unread changes
         let rows = client
-            .query("SELECT data FROM pg_logical_slot_get_changes('test_slot', NULL, NULL);", &[])
+            .query("SELECT data FROM pg_logical_slot_get_changes('json_slot', NULL, NULL);", &[])
             .await?;
         for row in rows {
             // 'test_decoding' outputs changes as simple plaintext strings
