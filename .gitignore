@@ -1,6 +1,7 @@
-# DB state and volumes
+# DB state, volumes and sample files
 pg_data/
 shared_data/
+users.csv
 
 # Rust Build Artifacts
 htap_cdc/target/
