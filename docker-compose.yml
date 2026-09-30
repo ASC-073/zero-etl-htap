@@ -1,0 +1,15 @@
+services:
+  htap-postgres:
+    build: .
+    container_name: htap_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=htap_db
+    volumes:
+      # This will save DB state across container restarts
+      - ./pg_data:/var/lib/postgresql/data
+      # This is shared folder where the NixOS host and Docker container can exchange files
+      - ./shared_data:/tmp/shared_data

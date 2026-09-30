@@ -1,0 +1,15 @@
+# DB state and volumes
+pg_data/
+shared_data/
+
+# Rust Build Artifacts
+htap_cdc/target/
+
+# External Source Repos
+postgres/
+
+# OS hidden files
+.DS_Store
+
+# Raw notes
+dev_notes/
